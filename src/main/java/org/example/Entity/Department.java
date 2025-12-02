@@ -6,6 +6,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -23,7 +25,13 @@ public class Department {
     private String name;
 
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable()   //Owning Side
+    @ToString.Exclude
+    private Set<Doctor> doctors = new HashSet<>();
+
     @CreationTimestamp
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp

@@ -8,7 +8,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -34,7 +36,9 @@ public class Doctor {
     @ToString.Exclude //Inverse Side
     private List<Appointment> appointments = new ArrayList<>();
 
-
+    @ManyToMany(fetch = FetchType.LAZY,mappedBy = "doctors")
+    @ToString.Exclude
+    private Set<Department> Departments = new HashSet<>();
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
