@@ -28,6 +28,10 @@ public class Insurance {
 
     private LocalDate validUntil;
 
+    @OneToOne(mappedBy = "insurance")
+    private Patient patient; //Inverse Side
+
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 

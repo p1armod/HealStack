@@ -33,8 +33,14 @@ public class Patient {
     @Column(nullable = false)
     private LocalDate birthDate;
 
-
+    @Enumerated(EnumType.STRING)
     public BloodGroupType bloodGroupType;
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn()
+    private Insurance insurance;  //Owner Side
+
+
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
