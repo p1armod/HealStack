@@ -30,6 +30,9 @@ public class Department {
     @ToString.Exclude
     private Set<Doctor> doctors = new HashSet<>();
 
+    @OneToOne //Owning Side
+    private Doctor headDoctor;
+
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
