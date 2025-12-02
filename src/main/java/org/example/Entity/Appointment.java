@@ -26,12 +26,19 @@ public class Appointment {
 
     private String status;
 
+    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    @JoinColumn(nullable = false)   // Owner Side
+    private Patient patient;
 
+    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    @JoinColumn(nullable = false)  // Owner Side
+    private Doctor doctor;
 
 
 
 
     @CreationTimestamp
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp

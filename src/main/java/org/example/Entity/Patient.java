@@ -8,6 +8,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -37,8 +39,13 @@ public class Patient {
     public BloodGroupType bloodGroupType;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn()
-    private Insurance insurance;  //Owner Side
+    @JoinColumn()    //Owner Side
+    private Insurance insurance;
+
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "patient", fetch = FetchType.LAZY)
+    @ToString.Exclude // Inverse Side
+    private List<Appointment> appointments = new ArrayList<>();
 
 
 
