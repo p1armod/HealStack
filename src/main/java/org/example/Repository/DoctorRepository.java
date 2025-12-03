@@ -1,7 +1,9 @@
 package org.example.Repository;
 
+import jakarta.validation.constraints.NotNull;
 import org.example.Entity.Doctor;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DoctorRepository extends Repository<Doctor, Long> {
+public interface DoctorRepository extends JpaRepository<Doctor, Long> {
+
 }

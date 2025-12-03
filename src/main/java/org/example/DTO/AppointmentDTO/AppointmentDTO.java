@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.Entity.Doctor;
+import org.example.Entity.Patient;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +19,6 @@ public class AppointmentDTO {
     private String reason;
     private String status;
     private LocalDateTime appointmentTime;
-    private Long patientId;
-    private Long doctorId;
+    private Patient patient;
+    private Doctor doctor;
 }
