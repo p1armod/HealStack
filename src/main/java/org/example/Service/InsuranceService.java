@@ -1,10 +1,9 @@
-package org.example.Service.ServiceImpl;
+package org.example.Service;
 
 import org.example.DTO.InsuranceDTO.AddInsuranceDTO;
 import org.example.DTO.InsuranceDTO.InsuranceDTO;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 public interface InsuranceService {

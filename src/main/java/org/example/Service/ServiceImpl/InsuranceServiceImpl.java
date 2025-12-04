@@ -8,6 +8,7 @@ import org.example.Entity.Insurance;
 import org.example.Entity.Patient;
 import org.example.Repository.InsuranceRepository;
 import org.example.Repository.PatientRepository;
+import org.example.Service.InsuranceService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
