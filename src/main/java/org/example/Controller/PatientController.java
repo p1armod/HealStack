@@ -66,7 +66,7 @@ public class PatientController {
     public ResponseEntity<PatientDTO> createPatient(@RequestBody @Valid AddPatientDTO addPatientDTO){
         PatientDTO saved = patientService.createPatient(addPatientDTO);
         return ResponseEntity
-                .created(URI.create("/patients/" + saved.getId()))
+                .created(URI.create("/" + saved.getId()))
                 .body(saved);
     }
 
